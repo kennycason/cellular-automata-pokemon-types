@@ -25,11 +25,11 @@ The below convergence graph shows how the populations starting from a random sta
 
 The below graph shows when both the attacker and defender exchange an attack.
 
-![](data/fire_water_grass_convergence_mutual_attacks_.png?raw=true)
+![](data/fire_water_grass_convergence_mutual_attacks.png?raw=true)
 
 The below graph shows when only the attacker attacks each step.
 
-![](data/fire_water_grass_convergence_only_attacker_attacks_.png?raw=true)
+![](data/fire_water_grass_convergence_only_attacker_attacks.png?raw=true)
 
 A video of a larger simulation
 https://v.usetapes.com/l58ybCs2bT
