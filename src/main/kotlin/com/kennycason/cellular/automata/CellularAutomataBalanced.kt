@@ -16,10 +16,10 @@ import javax.swing.WindowConstants
  */
 
 fun main(args: Array<String>) {
-    CellularAutomata().run()
+    CellularAutomataBalanced().run()
 }
 
-class CellularAutomata() {
+class CellularAutomataBalanced() {
     val random = Random()
     val screenWidth = 640
     val screenHeight = 480
@@ -28,6 +28,7 @@ class CellularAutomata() {
     val height = screenHeight / cellDim
     val saveImage = false
     val printConvergenceStats = true
+    val mutualAttacks = false
 
     var canvas: BufferedImage = BufferedImage(screenWidth, screenHeight, BufferedImage.TYPE_INT_ARGB)
     var graphics = canvas.createGraphics()
@@ -118,16 +119,20 @@ class CellularAutomata() {
         if (defender.element == Element.FIRE && attacker.element == Element.WATER) { defender.hp-- }
         if (defender.element == Element.WATER && attacker.element == Element.GRASS) { defender.hp--  }
         if (defender.element == Element.GRASS && attacker.element == Element.FIRE) { defender.hp--  }
-        if (attacker.element == Element.FIRE && defender.element == Element.WATER) { attacker.hp-- }
-        if (attacker.element == Element.WATER && defender.element == Element.GRASS) { attacker.hp--  }
-        if (attacker.element == Element.GRASS && defender.element == Element.FIRE) { attacker.hp--  }
-        if (attacker.hp <= 0 || attacker.element == Element.NONE) {
-            attacker.hp = 10
-            attacker.element = defender.element
+
+        // defender mutually attacking attacker
+        if (mutualAttacks) {
+            if (attacker.element == Element.FIRE && defender.element == Element.WATER) { attacker.hp-- }
+            if (attacker.element == Element.WATER && defender.element == Element.GRASS) { attacker.hp-- }
+            if (attacker.element == Element.GRASS && defender.element == Element.FIRE) { attacker.hp-- }
+            if (attacker.hp <= 0 || attacker.element == Element.NONE) {
+                attacker.hp = 10
+                attacker.element = defender.element
+            }
         }
         if (defender.hp <= 0 || defender.element == Element.NONE) {
             defender.hp = 10
-            defender.element = defender.element
+            defender.element = attacker.element
         }
     }
 
