@@ -1,11 +1,15 @@
-# Cellular Automata - Pokemon Type Battles
+# Cellular Automata - Pokemon Type (Gen 1) Battles
 
+This <a href="https://en.wikipedia.org/wiki/Cellular_automaton" target="blank">Cellular Automata</a> (CA) builds up to a Pokemon Type battle simulation from simpler CA.
 
-Pokemon compete with neighboring Pokemon. This project has a couple experiments:
+Simulations include: 
+- 1. A balanced 3 Typed CA (Fire, Water, Fire).
+- 2. A larger, balanced N Typed CA.
+- 3. The full Pokemon Type CA based on the strength/weakness/immunity charts of <a href="http://bulbapedia.bulbagarden.net/wiki/Type" target="blank">Gen 1 Pokemon games</a>
 
-## #1 Balanced Type Simulation (3 Types)
+## #1 Balanced 3 Type Simulation (Fire, Water, Fire)
 
-This demonstration is a Cellular Automata that simulates three balanced Pokemon types battling against each other. 
+This demonstration is a CA that simulates three balanced Pokemon types battling against each other. 
 
 Balanced meaning that Type A can beat B, and only B. Type B can beat B, and only B. So on and so forth. 
 
@@ -19,17 +23,82 @@ Balanced meaning that Type A can beat B, and only B. Type B can beat B, and only
 - Each loss, a cell loses one HP.
 - Depending on mode, both the attacker and defender can mutually attack each other, else only the attacker attacks.
 
-<img src="/data/fire_water_grass_balanced_large.gif?raw=true" width="500"/>
+<img src="/data/fire_water_grass_balanced_large.gif?raw=true" width="600"/>
 
 The below convergence graph shows how the populations starting from a random state tend towards homogeneousness. The end state is that each of the three elements represent approximately 33% of the occupied space. Note: The large variance in the beginning is because the map was initialized "sparsely" with a lot of empty space. All other experiments are "dense" with no empty space.
 
-<img src="/data/fire_water_grass_balanced_convergence.png?raw=true" width="500"/>
+<img src="/data/fire_water_grass_balanced_convergence.png?raw=true" width="600"/>
 
 A video of a larger simulation
-https://v.usetapes.com/l58ybCs2bT
+<a href="https://v.usetapes.com/l58ybCs2bT" target="blank"/>
 
 
-## #2 Balanced Type Simulation (N Types)
+## #2 Balanced N Type Simulation 
 
-This demonstration is very similar to demonstration #1 except for more than 3 types of Balanced Pokemon types will compete
+This demonstration is very similar to demonstration #1 except for more than 3 types of balanced Pokemon types will compete with eache other. The types are labeld "A" to "Z". The rules follow that "B" beats "A", "C" beats "B", ..., "Z" beats "A". In this simulation each cell is densely packed with no empty cell.
+
+### Balanced N Types Convergence
+
+For low N, the types quickly converge to order and balance. With the exception being that 2 types, since they attack each other, tend to end with a single winner.
+
+Another interesting trend is the "bulge" pattern that appears in the center of the convergence graphs. The population distribution starts out balanced, and the end balanced. However, during these bulges, they are very off balance. The starting states are randomly initialized and could be described as "chaotic", and the end states are well "ordered" and portray very obvious patterns. This could be thought of as the "energy" required to bring order to the chaos of the system. 
+
+It is possible for a type to "accidentally" go extinct, which brings the system out of balance. This inbalance can be seen when N = 2, or as N grows in size (~20+).
+
+<img src="/data/balanced_2_type_convergence.png?raw=true" width="500"/>
+<img src="/data/balanced_4_types_convergence.png?raw=true" width="500"/>
+<img src="/data/balanced_5_types_convergence.png?raw=true" width="500"/>
+<img src="/data/balanced_8_types_convergence.png?raw=true" width="500"/>
+<img src="/data/balanced_10_types_convergence.png?raw=true" width="500"/>
+<img src="/data/balanced_12_types_convergence.png?raw=true" width="500"/>
+<img src="/data/balanced_16_types_convergence.png?raw=true" width="500"/>
+<img src="/data/balanced_20_types_convergence.png?raw=true" width="500"/>
+
+### N Types GIFs
+
+GIFs are large so I tried to not load all of them on one page. Below are some links (they open in new tabs).
+<a href="/data/balanced_4_types.gif?raw=true" target="blank">4 Type CA</a>
+<a href="/data/balanced_8_types.gif?raw=true" target="blank">8 Type CA</a>
+<a href="/data/balanced_10_types.gif?raw=true" target="blank">10 Type CA</a>
+<a href="/data/balanced_12_types.gif?raw=true" target="blank">12 Type CA</a>
+<a href="/data/balanced_20_types.gif?raw=true" target="blank">20 Type CA (Partial)</a>
+
+12 Typed CA
+
+<img src="/data/balanced_12_types.gif?raw=true" width="300"/>
+
+### N Types Notable Images
+
+- For large N (~20+) the likelihood of stagnation occurs, with little or no pattern emerging. It is also more likely that one type wins, and other types go extinct.
+
+Note the clumps of randomly placed colors. Those represent Types that have remained stagnant since the the initialization of the simulation.
+
+<img src="/data/balanced_16_types_1.png?raw=true" width="300"/>
+<img src="/data/balanced_16_types_2.png?raw=true" width="300"/>
+
+As mentioned above, large N Typed simulations have a hard time getting started due to the lower probability of having neigbors that they can win over. The below images show the formation of a hole that opened, and spread. Sadly hoewver, the CA died a slow death as entropy won.
+
+<table>
+<tr><td>
+<img src="/data/balanced_20_types_1.png?raw=true" width="300"/>
+<img src="/data/balanced_20_types_2.png?raw=true" width="300"/>
+</td></tr>
+<tr><td>
+<img src="/data/balanced_20_types_3.png?raw=true" width="300"/>
+<img src="/data/balanced_20_types_4.png?raw=true" width="300"/>
+</td></tr>
+<tr><td>
+<img src="/data/balanced_20_types_5.png?raw=true" width="300"/>
+<img src="/data/balanced_20_types_6.png?raw=true" width="300"/>
+</td></tr>
+<tr><td>
+<img src="/data/balanced_20_types_7.png?raw=true" width="300"/>
+<img src="/data/balanced_20_types_8.png?raw=true" width="300"/>
+</td></tr>
+</table>
+
+The 26 Typed CA tended to never escape the random initialization.
+
+<img src="/data/balanced_26_types_max_entropy.png?raw=true" width="250"/>
+
 
