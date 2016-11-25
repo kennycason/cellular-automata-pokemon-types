@@ -168,4 +168,13 @@ More GIFs in the below are some links (they open in new tabs).
 </tr>
 </table>
 
+### Conclusions
 
+- Ghost wins the vast majority of the fights. This is largely due to it's immunities and relatively low overlap with other types. Specifically, nothing has an advantage over Ghost, except other Ghost.
+- Most simulations come down between Bug and Ghost. I did not expect Bug to be so strong.
+- Sometimes Ghost and Normal press against each other (unmoving as they are immune to each other). This grid-lock typically ends when one side gets cannibalized from the insde by another type.
+- Many of the end games end with Water, Lightning, Ground fighting very aggresively back and forth while Bug and Ghost fight a slower battle in and around the three.
+- It seems that Bug due to number and position is almost always prime to beat Ghost. However, Bug is regularly being wiped ouf in mass by other types. Though Bug seems to recover in most places. I saw one simulation where Bug would destroy much of Ghost, and then Fire would instantly devour 99% of Bug Pokemon. Then Ghost would devour most of Fire Pokemon. This would then give Bug a chance to rebound, until Fire took it out again.
+- Turning on and off "friendly fire" seemed to slow, but not stop Bug's progression. Though the simulations do seem to drag out more. (Friendly fire == attacking same typed Pokemon)
+
+Thanks for reading!
