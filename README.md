@@ -45,7 +45,7 @@ Another interesting trend is the "bulge" pattern that appears in the center of t
 
 It is possible for a type to "accidentally" go extinct, which brings the system out of balance. This inbalance can be seen when N = 2, or as N grows in size (~20+).
 
-<img src="/data/balanced_2_type_convergence.png?raw=true" width="500"/>
+<img src="/data/balanced_2_types_convergence.png?raw=true" width="500"/>
 <img src="/data/balanced_4_types_convergence.png?raw=true" width="500"/>
 <img src="/data/balanced_5_types_convergence.png?raw=true" width="500"/>
 <img src="/data/balanced_8_types_convergence.png?raw=true" width="500"/>
