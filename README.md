@@ -3,16 +3,16 @@
 This <a href="https://en.wikipedia.org/wiki/Cellular_automaton" target="blank">Cellular Automata</a> (CA) builds up to a Pokemon Type battle simulation from simpler CA.
 
 Simulations include: 
-- 1. A balanced 3 Typed CA (Fire, Water, Fire).
+- 1. A balanced 3 Typed CA (Fire, Grass, Water).
 - 2. A larger, balanced N Typed CA.
 - 3. The full Pokemon Type CA based on the strength/weakness/immunity charts of <a href="http://bulbapedia.bulbagarden.net/wiki/Type" target="blank">Gen 1 Pokemon games</a>
 
 
-## #1 Balanced 3 Type Simulation (Fire, Water, Fire)
+## #1 Balanced 3 Type Simulation (Fire, Grass, Water)
 
 This demonstration is a CA that simulates three balanced Pokemon types battling against each other. 
 
-Balanced meaning that Type A can beat B, and only B. Type B can beat B, and only B. So on and so forth. 
+Balanced meaning that Type A can beat B, and only B. Type B can beat C, and only B. So on and so forth. 
 
 ### Rules for 3 Type Simulation
 
