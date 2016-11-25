@@ -127,35 +127,45 @@ The full type system can be found <a href="http://bulbapedia.bulbagarden.net/wik
 
 In this CA, an attacking Pokemon will attack each of it's neighbors. The damage delivered will be determined based on both the type of the attacker and the defender, per the above chart. For example Fire does 2x damage to Grass, and Normal does 0 damage to Ghost type because Ghost types are immune to physical attack. 
 
-<table>
-<tr>
-<td>Run 1<br/><img src="/data/pokemon_gen1_types_run1.png?raw=true" width="300"/></td>
-<td>Run 4<br/><img src="/data/pokemon_gen1_types_run4.png?raw=true" width="300"/></td>
-</tr>
-<tr>
-<td>Run 2a<br/><img src="/data/pokemon_gen1_types_run2a.png?raw=true" width="300"/></td>
-<td>Run 2b<br/><img src="/data/pokemon_gen1_types_run2b.png?raw=true" width="300"/></td>
-</tr>
-</table>
+Each color represents a type. The color mapping can be found in the source code.
 
 <img src="/data/pokemon_gen1_types.gif?raw=true" width="500"/>
 
 Some full speed simmulations I recorded with Usetapes.
 
-2 min, normal wins (A very intense simulation.)
-https://v.usetapes.com/i49nEZprwd
+2 minute instense simulation: <a href "https://v.usetapes.com/i49nEZprwd" target="blank">here</a> (Normal Wins)
 
-A LONG simulation in which I eventually gave up hoping for a winner. However, 40 minutes later, Normal makes an epic comeback and starts conquering from the top right corner. (I did now have world-wrap at the time of this simulation)
-Part 1: https://v.usetapes.com/DhbhrRAZn7
-Part 2: https://v.usetapes.com/yDDjMxuLnI
-Part 3: https://v.usetapes.com/Bv44dpeyxy
-Part 4: https://v.usetapes.com/szVjcwluAS
+A long simulation in which I eventually gave up hoping for a winner. However, 40 minutes later, Normal makes an epic comeback and starts conquering from the top right corner. (I did now have world-wrap at the time of this simulation)
+
+<a href "https://v.usetapes.com/DhbhrRAZn7" target="blank">Part 1</a>, 
+<a href "https://v.usetapes.com/yDDjMxuLnI" target="blank">Part 2</a>, 
+<a href "https://v.usetapes.com/Bv44dpeyxy" target="blank">Part 3</a>, 
+<a href "https://v.usetapes.com/szVjcwluAS" target="blank">Part 4</a>
 
 The epic comeback of Normal
-<img src="/data/pokemon_gent1_types_normal_epic_comeback.gif.gif?raw=true" width="500"/>
+
+<img src="/data/pokemon_gen1_types_normal_epic_comeback.gif?raw=true" width="300"/>
 
 More GIFs in the below are some links (they open in new tabs).
+
 <a href="/data/pokemon_gen1_types.gif?raw=true" target="blank">Run 1</a>
-<a href="/data/pokemon_gen1_types2a.gif?raw=true" target="blank">Run 2a</a>
+
+<a href="/data/pokemon_gen1_types2a.gif?raw=true" target="blank">Run 2a</a>, 
 <a href="/data/pokemon_gen1_types2b.gif?raw=true" target="blank">Run 2b</a>
+
 <a href="/data/pokemon_gen1_types_no_immunity.gif?raw=true" target="blank">Run with no immunities</a>
+
+### Sample Convergence Rates
+
+<table>
+<tr>
+<td>Run 1<br/><img src="/data/pokemon_gen1_types_run1_convergence.png?raw=true" width="300"/></td>
+<td>Run 4<br/><img src="/data/pokemon_gen1_types_run4_convergence.png?raw=true" width="300"/></td>
+</tr>
+<tr>
+<td>Run 2a<br/><img src="/data/pokemon_gen1_types_run2a_convergence.png?raw=true" width="300"/></td>
+<td>Run 2b<br/><img src="/data/pokemon_gen1_types_run2b_convergence.png?raw=true" width="300"/></td>
+</tr>
+</table>
+
+
