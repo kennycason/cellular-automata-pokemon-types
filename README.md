@@ -113,4 +113,49 @@ As mentioned above, large N Typed simulations have a hard time getting started d
 </table>
 
 
+## #3 Full CA Simulation using the Pokemon Gen 1 Types.
 
+This CA is a direct Type vs type simulation. It ignores all other variables, Such as:
+
+- Each Pokemon's stats (attack, defense, hp) are exactly the same. In the game, a Dragon pokemon has much higher stats than another type such as a Normal Pokemon.
+- The distribution of each Pokemon is equal. Certain In the game, Pokemon types are more rare/common.
+- A Pokemon will attack any neighboring Pokemon, regardless of the type, to include same typed Pokemon.
+
+The full type system can be found <a href="http://bulbapedia.bulbagarden.net/wiki/Type" target="blank">here</a> on Bulbapedia.
+
+<img src="/data/pokemon_gen1_type_chart.png?raw=true" width="500"/>
+
+In this CA, an attacking Pokemon will attack each of it's neighbors. The damage delivered will be determined based on both the type of the attacker and the defender, per the above chart. For example Fire does 2x damage to Grass, and Normal does 0 damage to Ghost type because Ghost types are immune to physical attack. 
+
+<table>
+<tr>
+<td>Run 1<br/><img src="/data/pokemon_gen1_types_run1.png?raw=true" width="300"/></td>
+<td>Run 4<br/><img src="/data/pokemon_gen1_types_run4.png?raw=true" width="300"/></td>
+</tr>
+<tr>
+<td>Run 2a<br/><img src="/data/pokemon_gen1_types_run2a.png?raw=true" width="300"/></td>
+<td>Run 2b<br/><img src="/data/pokemon_gen1_types_run2b.png?raw=true" width="300"/></td>
+</tr>
+</table>
+
+<img src="/data/pokemon_gen1_types.gif?raw=true" width="500"/>
+
+Some full speed simmulations I recorded with Usetapes.
+
+2 min, normal wins (A very intense simulation.)
+https://v.usetapes.com/i49nEZprwd
+
+A LONG simulation in which I eventually gave up hoping for a winner. However, 40 minutes later, Normal makes an epic comeback and starts conquering from the top right corner. (I did now have world-wrap at the time of this simulation)
+Part 1: https://v.usetapes.com/DhbhrRAZn7
+Part 2: https://v.usetapes.com/yDDjMxuLnI
+Part 3: https://v.usetapes.com/Bv44dpeyxy
+Part 4: https://v.usetapes.com/szVjcwluAS
+
+The epic comeback of Normal
+<img src="/data/pokemon_gent1_types_normal_epic_comeback.gif.gif?raw=true" width="500"/>
+
+More GIFs in the below are some links (they open in new tabs).
+<a href="/data/pokemon_gen1_types.gif?raw=true" target="blank">Run 1</a>
+<a href="/data/pokemon_gen1_types2a.gif?raw=true" target="blank">Run 2a</a>
+<a href="/data/pokemon_gen1_types2b.gif?raw=true" target="blank">Run 2b</a>
+<a href="/data/pokemon_gen1_types_no_immunity.gif?raw=true" target="blank">Run with no immunities</a>
