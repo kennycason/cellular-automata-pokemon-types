@@ -141,10 +141,10 @@ Some full speed simmulations I recorded with Usetapes.
 
 A long simulation in which I eventually gave up hoping for a winner. However, 40 minutes later, Normal makes an epic comeback and starts conquering from the top right corner. (I did now have world-wrap at the time of this simulation)
 
-<a href "https://v.usetapes.com/DhbhrRAZn7" target="blank">Part 1</a>, 
-<a href "https://v.usetapes.com/yDDjMxuLnI" target="blank">Part 2</a>, 
-<a href "https://v.usetapes.com/Bv44dpeyxy" target="blank">Part 3</a>, 
-<a href "https://v.usetapes.com/szVjcwluAS" target="blank">Part 4</a>
+<a href="https://v.usetapes.com/DhbhrRAZn7" target="blank">Part 1</a>, 
+<a href="https://v.usetapes.com/yDDjMxuLnI" target="blank">Part 2</a>, 
+<a href="https://v.usetapes.com/Bv44dpeyxy" target="blank">Part 3</a>, 
+<a href="https://v.usetapes.com/szVjcwluAS" target="blank">Part 4</a>
 
 The epic comeback of Normal
 
