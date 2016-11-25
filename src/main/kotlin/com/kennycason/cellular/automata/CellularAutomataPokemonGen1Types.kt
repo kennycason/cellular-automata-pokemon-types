@@ -26,9 +26,10 @@ class CellularAutomataPokemonGen1Types() {
     val cellDim = 2
     val width = screenWidth / cellDim
     val height = screenHeight / cellDim
-    val saveImage = true
+    val saveImage = false
     val saveIthImage = 1
     val printConvergenceStats = true
+    val friendlyFire = false // pokemon attack same typed pokemon
 
     var canvas: BufferedImage = BufferedImage(screenWidth, screenHeight, BufferedImage.TYPE_INT_ARGB)
     var graphics = canvas.createGraphics()
@@ -144,28 +145,51 @@ class CellularAutomataPokemonGen1Types() {
                 // vertical/horizontal
                 if (x > 0) {
                     battle(fg[x - 1][y], fg[x][y])
+                } else {
+                    battle(fg[width - 1][y], fg[x][y])
                 }
+
                 if (x < width - 1) {
-                     battle(fg[x + 1][y], fg[x][y])
+                    battle(fg[x + 1][y], fg[x][y])
+                } else {
+                    battle(fg[0][y], fg[x][y])
                 }
+
                 if (y > 0) {
                     battle(fg[x][y - 1], fg[x][y])
+                } else {
+                    battle(fg[x][height - 1], fg[x][y])
                 }
+
                 if (y < height - 1) {
                     battle(fg[x][y + 1], fg[x][y])
+                } else {
+                    battle(fg[x][0], fg[x][y])
                 }
+
                 // diagonals
                 if (x > 0 && y > 0) {
                     battle(fg[x - 1][y - 1], fg[x][y])
+                } else {
+                    battle(fg[width - 1][height - 1], fg[x][y])
                 }
+
                 if (x < width - 1 && y > 0) {
                     battle(fg[x + 1][y - 1], fg[x][y])
+                } else {
+                    battle(fg[0][height - 1], fg[x][y])
                 }
+
                 if (x > 0 && y < height - 1) {
                     battle(fg[x - 1][y + 1], fg[x][y])
+                } else {
+                    battle(fg[width - 1][0], fg[x][y])
                 }
+
                 if (x < width - 1 && y < height - 1) {
                     battle(fg[x + 1][y + 1], fg[x][y])
+                } else {
+                    battle(fg[0][0], fg[x][y])
                 }
             }
         }
@@ -173,6 +197,7 @@ class CellularAutomataPokemonGen1Types() {
 
     private fun battle(defender: Pokemon, attacker: Pokemon) {
         if (defender.type == Type.NONE && attacker.type == Type.NONE) { return }
+        if (friendlyFire && defender.type == attacker.type) { return }
 
         val damage = getDamage(defender, attacker)
 
@@ -205,7 +230,7 @@ class CellularAutomataPokemonGen1Types() {
         }
         (0.. width - 1).forEach { x ->
             (0..height - 1).forEach { y ->
-                population[fg[x][y]!!.type]!!.incrementAndGet()
+                population[fg[x][y].type]!!.incrementAndGet()
             }
         }
 
