@@ -23,11 +23,12 @@ class CellularAutomataPokemonGen1Types() {
     val random = Random()
     val screenWidth = 640
     val screenHeight = 480
-    val cellDim = 8
+    val cellDim = 2
     val width = screenWidth / cellDim
     val height = screenHeight / cellDim
-    val saveImage = false
-    val printConvergenceStats = false
+    val saveImage = true
+    val saveIthImage = 1
+    val printConvergenceStats = true
 
     var canvas: BufferedImage = BufferedImage(screenWidth, screenHeight, BufferedImage.TYPE_INT_ARGB)
     var graphics = canvas.createGraphics()
@@ -57,6 +58,7 @@ class CellularAutomataPokemonGen1Types() {
             .map { type -> Pair(type, AtomicInteger())}
             .toMap()
 
+//    val immuneFrom: Map<Type, Set<Type>> = emptyMap()
     val immuneFrom = mapOf(
             Pair(Type.NORMAL, setOf(Type.GHOST)),
             Pair(Type.FLYING, setOf(Type.GROUND)),
@@ -74,7 +76,7 @@ class CellularAutomataPokemonGen1Types() {
             Pair(Type.BUG, setOf(Type.POISON, Type.GRASS, Type.PSYCHIC)),
             Pair(Type.GHOST, setOf(Type.GHOST)),
             Pair(Type.FIRE, setOf(Type.BUG, Type.GRASS, Type.ICE)),
-            Pair(Type.WATER, setOf(Type.GROUND, Type.FIRE)),
+            Pair(Type.WATER, setOf(Type.GROUND, Type.ROCK, Type.FIRE)),
             Pair(Type.GRASS, setOf(Type.GROUND, Type.ROCK, Type.WATER)),
             Pair(Type.ELECTRIC, setOf(Type.FLYING, Type.WATER)),
             Pair(Type.PSYCHIC, setOf(Type.FIGHT, Type.POISON)),
@@ -106,6 +108,13 @@ class CellularAutomataPokemonGen1Types() {
         frame.setSize(screenWidth, screenHeight)
         frame.setVisible(true)
 
+        if (printConvergenceStats) {
+            print("Step, ")
+            Type.values().forEach { type ->
+                print("$type, ")
+            }
+            println()
+        }
         var i = 0
         val panel = object: JPanel() {
             override fun paintComponent(g: Graphics) {
@@ -115,7 +124,7 @@ class CellularAutomataPokemonGen1Types() {
                 draw()
                 g.drawImage(canvas, 0, 0, screenWidth, screenHeight, this)
 
-                if (saveImage) {
+                if (saveImage && i % saveIthImage == 0) {
                     ImageIO.write(canvas, "png", File("/tmp/pokemon_${cellDim}x${cellDim}_${i}.png"))
                 }
                 i++
@@ -168,11 +177,9 @@ class CellularAutomataPokemonGen1Types() {
         val damage = getDamage(defender, attacker)
 
         defender.hp -= damage
-        println("${attacker.type} -> ${defender.type}: $damage damage")
-        println(defender.hp)
         if (defender.hp <= 0 || defender.type == Type.NONE) {
             defender.hp = 20
-            defender.type = defender.type
+            defender.type = attacker.type
         }
     }
 
@@ -248,26 +255,26 @@ class CellularAutomataPokemonGen1Types() {
         return Type.values()[random.nextInt(Type.values().size)]
     }
 
-}
+    data class Pokemon(var hp: Int = 20,
+                       var type: Type = Type.NONE)
 
-data class Pokemon(var hp: Int = 20,
-                   var type: Type = Type.NONE)
+    enum class Type {
+        NORMAL,
+        FIGHT,
+        FLYING,
+        POISON,
+        GROUND,
+        ROCK,
+        BUG,
+        GHOST,
+        FIRE,
+        WATER,
+        GRASS,
+        ELECTRIC,
+        PSYCHIC,
+        ICE,
+        DRAGON,
+        NONE
+    }
 
-enum class Type {
-    NORMAL,
-    FIGHT,
-    FLYING,
-    POISON,
-    GROUND,
-    ROCK,
-    BUG,
-    GHOST,
-    FIRE,
-    WATER,
-    GRASS,
-    ELECTRIC,
-    PSYCHIC,
-    ICE,
-    DRAGON,
-    NONE
 }
