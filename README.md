@@ -7,6 +7,7 @@ Simulations include:
 - 2. A larger, balanced N Typed CA.
 - 3. The full Pokemon Type CA based on the strength/weakness/immunity charts of <a href="http://bulbapedia.bulbagarden.net/wiki/Type" target="blank">Gen 1 Pokemon games</a>
 
+
 ## #1 Balanced 3 Type Simulation (Fire, Water, Fire)
 
 This demonstration is a CA that simulates three balanced Pokemon types battling against each other. 
@@ -33,11 +34,12 @@ A video of a larger simulation
 <a href="https://v.usetapes.com/l58ybCs2bT" target="blank"/>
 
 
+
 ## #2 Balanced N Type Simulation 
 
 This demonstration is very similar to demonstration #1 except for more than 3 types of balanced Pokemon types will compete with eache other. The types are labeld "A" to "Z". The rules follow that "B" beats "A", "C" beats "B", ..., "Z" beats "A". In this simulation each cell is densely packed with no empty cell.
 
-### Balanced N Types Convergence
+### N Types Convergence
 
 For low N, the types quickly converge to order and balance. With the exception being that 2 types, since they attack each other, tend to end with a single winner.
 
@@ -75,7 +77,7 @@ GIFs are large so I tried to not load all of them on one page. Below are some li
 
 <a href="/data/balanced_4_types.gif" target="blank">4 Type CA</a>, 
 <a href="/data/balanced_8_types.gif" target="blank">8 Type CA</a>, 
-<a href="/data/balanced_10_types.gife" target="blank">10 Type CA</a>, 
+<a href="/data/balanced_10_types.gif" target="blank">10 Type CA</a>, 
 <a href="/data/balanced_12_types.gif" target="blank">12 Type CA</a>, 
 <a href="/data/balanced_20_types.gif" target="blank">20 Type CA (Partial)</a>
 
@@ -114,7 +116,8 @@ As mentioned above, large N Typed simulations have a hard time getting started d
 </table>
 
 
-## #3 Full CA Simulation using the Pokemon Gen 1 Types.
+
+## #3 Full CA Simulation using the Pokemon Gen 1 Types
 
 This CA is a direct Type vs type simulation. It ignores all other variables, Such as:
 
@@ -169,7 +172,7 @@ More GIFs in the below are some links (they open in new tabs).
 </tr>
 </table>
 
-### Conclusions
+### Conclusion
 
 - Ghost wins the vast majority of the fights. This is largely due to it's immunities and relatively low overlap with other types. Specifically, nothing has an advantage over Ghost, except other Ghost.
 - Most simulations come down between Bug and Ghost. I did not expect Bug to be so strong.
