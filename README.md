@@ -9,7 +9,7 @@ This demonstration is a Cellular Automata that simulates three balanced Pokemon 
 
 Balanced meaning that Type A can beat B, and only B. Type B can beat B, and only B. So on and so forth. 
 
-### Rules 
+### Rules for 3 Type Simulation
 
 - Fire beats Grass.
 - Grass beats Water.
@@ -19,23 +19,11 @@ Balanced meaning that Type A can beat B, and only B. Type B can beat B, and only
 - Each loss, a cell loses one HP.
 - Depending on mode, both the attacker and defender can mutually attack each other, else only the attacker attacks.
 
-A large gif demonstrating the rules being applied with mutual attacks
+<img src="/data/fire_water_grass_balanced_large.gif?raw=true" width="500"/>
 
-![](data/fire_water_grass_large_mutual_attacks.gif?raw=true)
+The below convergence graph shows how the populations starting from a random state tend towards homogeneousness. The end state is that each of the three elements represent approximately 33% of the occupied space. Note: The large variance in the beginning is because the map was initialized "sparsely" with a lot of empty space. All other experiments are "dense" with no empty space.
 
-A large gif demonstrating the rules being applied with only the attacker attacking. Note how much smoother the patterns are.
-
-![](data/fire_water_grass_large_only_attacker_attacks.gif?raw=true)
-
-The below convergence graph shows how the populations starting from a random state tend towards homogeneousness. The end state is that each of the three elements represent approximately 33% of the occupied space.
-
-The below graph shows when both the attacker and defender exchange an attack.
-
-![](data/fire_water_grass_convergence_mutual_attacks.png?raw=true)
-
-The below graph shows when only the attacker attacks each step.
-
-![](data/fire_water_grass_convergence_only_attacker_attacks.png?raw=true)
+<img src="/data/fire_water_grass_balanced_convergence.png?raw=true" width="500"/>
 
 A video of a larger simulation
 https://v.usetapes.com/l58ybCs2bT
