@@ -137,7 +137,7 @@ Each color represents a type. The color mapping can be found in the source code.
 
 Some full speed simmulations I recorded with Usetapes.
 
-2 minute instense simulation: <a href "https://v.usetapes.com/i49nEZprwd" target="blank">here</a> (Normal Wins)
+2 minute instense simulation: <a href="https://v.usetapes.com/i49nEZprwd" target="blank">here</a> (Normal Wins)
 
 A long simulation in which I eventually gave up hoping for a winner. However, 40 minutes later, Normal makes an epic comeback and starts conquering from the top right corner. (I did now have world-wrap at the time of this simulation)
 
