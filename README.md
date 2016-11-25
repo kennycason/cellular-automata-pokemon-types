@@ -45,9 +45,9 @@ For low N, the types quickly converge to order and balance. With the exception b
 
 Another interesting trend is the "bulge" pattern that appears in the center of the convergence graphs. The population distribution starts out balanced, and the end balanced. However, during these bulges, they are very off balance. The starting states are randomly initialized and could be described as "chaotic", and the end states are well "ordered" and portray very obvious patterns. This could be thought of as the "energy" required to bring order to the chaos of the system. 
 
-It is possible for a type to "accidentally" go extinct, which brings the system out of balance. This imbalance can be seen when N = 2, or as N grows in size (~20+).
+It is possible for a type to "accidentally" go extinct, which brings the system out of balance. This imbalance can be seen more frequently when N = 2, or as N grows in size (~20+).
 
-The 26 Typed CA tended to never escape the random initialization.
+The 26 Typed CA tend to never escape the random initialization.
 
 The convergence charts for select N Typed simulations.
 
@@ -79,7 +79,7 @@ GIFs are large so I tried to not load all of them on one page. Below are some li
 <a href="/data/balanced_8_types.gif" target="blank">8 Type CA</a>, 
 <a href="/data/balanced_10_types.gif" target="blank">10 Type CA</a>, 
 <a href="/data/balanced_12_types.gif" target="blank">12 Type CA</a>, 
-<a href="/data/balanced_20_types.gif" target="blank">20 Type CA (Partial)</a>
+<a href="/data/balanced_20_types.gif" target="blank">20 Type CA</a>
 
 12 Typed CA
 
@@ -139,7 +139,7 @@ Some full speed simmulations I recorded with Usetapes.
 
 2 minute instense simulation: <a href="https://v.usetapes.com/i49nEZprwd" target="blank">here</a> (Normal Wins)
 
-A long simulation in which I eventually gave up hoping for a winner. However, 40 minutes later, Normal makes an epic comeback and starts conquering from the top right corner. (I did now have world-wrap at the time of this simulation)
+A long simulation in which I eventually gave up hoping for a winner. However, 40 minutes later, Normal makes an epic comeback and starts conquering from the top right corner. (I did not have world-wrap at the time of this simulation)
 
 <a href="https://v.usetapes.com/DhbhrRAZn7" target="blank">Part 1</a>, 
 <a href="https://v.usetapes.com/yDDjMxuLnI" target="blank">Part 2</a>, 
