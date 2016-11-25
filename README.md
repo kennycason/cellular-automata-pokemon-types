@@ -37,7 +37,7 @@ A video of a larger simulation
 
 ## #2 Balanced N Type Simulation 
 
-This demonstration is very similar to demonstration #1 except for more than 3 types of balanced Pokemon types will compete with eache other. The types are labeld "A" to "Z". The rules follow that "B" beats "A", "C" beats "B", ..., "Z" beats "A". In this simulation each cell is densely packed with no empty cell.
+This demonstration is very similar to demonstration #1 except for more than 3 types of balanced Pokemon types will compete with each other. The types are labeled "A" to "Z". The rules follow that "B" beats "A", "C" beats "B", ..., "Z" beats "A". In this simulation each cell is densely packed with no empty cell.
 
 ### N Types Convergence
 
@@ -45,7 +45,7 @@ For low N, the types quickly converge to order and balance. With the exception b
 
 Another interesting trend is the "bulge" pattern that appears in the center of the convergence graphs. The population distribution starts out balanced, and the end balanced. However, during these bulges, they are very off balance. The starting states are randomly initialized and could be described as "chaotic", and the end states are well "ordered" and portray very obvious patterns. This could be thought of as the "energy" required to bring order to the chaos of the system. 
 
-It is possible for a type to "accidentally" go extinct, which brings the system out of balance. This inbalance can be seen when N = 2, or as N grows in size (~20+).
+It is possible for a type to "accidentally" go extinct, which brings the system out of balance. This imbalance can be seen when N = 2, or as N grows in size (~20+).
 
 The 26 Typed CA tended to never escape the random initialization.
 
@@ -94,7 +94,7 @@ Note the clumps of randomly placed colors. Those represent Types that have remai
 <img src="/data/balanced_16_types_1.png?raw=true" width="300"/>
 <img src="/data/balanced_16_types_2.png?raw=true" width="300"/>
 
-As mentioned above, large N Typed simulations have a hard time getting started due to the lower probability of having neigbors that they can win over. The below images show the formation of a hole that opened, and spread. Sadly hoewver, the CA died a slow death as entropy won.
+As mentioned above, large N Typed simulations have a hard time getting started due to the lower probability of having neighbors that they can win over. The below images show the formation of a hole that opened, and spread. Sadly however, the CA died a slow death as entropy won.
 
 <table>
 <tr><td>
@@ -121,7 +121,7 @@ As mentioned above, large N Typed simulations have a hard time getting started d
 
 This CA is a direct Type vs type simulation. It ignores all other variables, Such as:
 
-- Each Pokemon's stats (attack, defense, hp) are exactly the same. In the game, a Dragon pokemon has much higher stats than another type such as a Normal Pokemon.
+- Each Pokemon's stats (attack, defense, hp) are exactly the same. In the game, a Dragon Pokemon has much higher stats than another type such as a Normal Pokemon.
 - The distribution of each Pokemon is equal. Certain In the game, Pokemon types are more rare/common.
 - A Pokemon will attack any neighboring Pokemon, regardless of the type, to include same typed Pokemon.
 
@@ -176,9 +176,9 @@ More GIFs in the below are some links (they open in new tabs).
 
 - Ghost wins the vast majority of the fights. This is largely due to it's immunities and relatively low overlap with other types. Specifically, nothing has an advantage over Ghost, except other Ghost.
 - Most simulations come down between Bug and Ghost. I did not expect Bug to be so strong.
-- Sometimes Ghost and Normal press against each other (unmoving as they are immune to each other). This grid-lock typically ends when one side gets cannibalized from the insde by another type.
-- Many of the end games end with Water, Lightning, Ground fighting very aggresively back and forth while Bug and Ghost fight a slower battle in and around the three.
-- It seems that Bug due to number and position is almost always prime to beat Ghost. However, Bug is regularly being wiped ouf in mass by other types. Though Bug seems to recover in most places. I saw one simulation where Bug would destroy much of Ghost, and then Fire would instantly devour 99% of Bug Pokemon. Then Ghost would devour most of Fire Pokemon. This would then give Bug a chance to rebound, until Fire took it out again.
+- Sometimes Ghost and Normal press against each other (unmoving as they are immune to each other). This grid-lock typically ends when one side gets cannibalized from the inside by another type.
+- Many of the end games end with Water, Lightning, Ground fighting very aggressively back and forth while Bug and Ghost fight a slower battle in and around the three.
+- It seems that Bug due to number and position is almost always prime to beat Ghost. However, Bug is regularly being wiped out in mass by other types. Though Bug seems to recover in most places. I saw one simulation where Bug would destroy much of Ghost, and then Fire would instantly devour 99% of Bug Pokemon. Then Ghost would devour most of Fire Pokemon. This would then give Bug a chance to rebound, until Fire took it out again.
 - Turning on and off "friendly fire" seemed to slow, but not stop Bug's progression. Though the simulations do seem to drag out more. (Friendly fire == attacking same typed Pokemon)
 
 Thanks for reading!
