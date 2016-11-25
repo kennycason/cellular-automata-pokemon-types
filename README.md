@@ -45,14 +45,29 @@ Another interesting trend is the "bulge" pattern that appears in the center of t
 
 It is possible for a type to "accidentally" go extinct, which brings the system out of balance. This inbalance can be seen when N = 2, or as N grows in size (~20+).
 
-<img src="/data/balanced_2_types_convergence.png?raw=true" width="500"/>
-<img src="/data/balanced_4_types_convergence.png?raw=true" width="500"/>
-<img src="/data/balanced_5_types_convergence.png?raw=true" width="500"/>
-<img src="/data/balanced_8_types_convergence.png?raw=true" width="500"/>
-<img src="/data/balanced_10_types_convergence.png?raw=true" width="500"/>
-<img src="/data/balanced_12_types_convergence.png?raw=true" width="500"/>
-<img src="/data/balanced_16_types_convergence.png?raw=true" width="500"/>
-<img src="/data/balanced_20_types_convergence.png?raw=true" width="500"/>
+The 26 Typed CA tended to never escape the random initialization.
+
+The convergence charts for select N Typed simulations.
+
+
+<table>
+<tr>
+<td>2 Type<br/><img src="/data/balanced_2_types_convergence.png?raw=true" width="300"/></td>
+<td>4 Type<br/><img src="/data/balanced_4_types_convergence.png?raw=true" width="300"/></td>
+</tr>
+<tr>
+<td>5 Type<br/><img src="/data/balanced_5_types_convergence.png?raw=true" width="300"/></td>
+<td>8 Type<br/><img src="/data/balanced_8_types_convergence.png?raw=true" width="300"/></td>
+</tr>
+<tr>
+<td>10 Type<br/><img src="/data/balanced_10_types_convergence.png?raw=true" width="300"/></td>
+<td>12 Type<br/><img src="/data/balanced_12_types_convergence.png?raw=true" width="300"/></td>
+</tr>
+<tr>
+<td>16 Type<br/><img src="/data/balanced_16_types_convergence.png?raw=true" width="300"/></td>
+<td>20 Type<br/><img src="/data/balanced_20_types_convergence.png?raw=true" width="300"/></td>
+</tr>
+</table>
 
 ### N Types GIFs
 
@@ -97,8 +112,5 @@ As mentioned above, large N Typed simulations have a hard time getting started d
 </td></tr>
 </table>
 
-The 26 Typed CA tended to never escape the random initialization.
-
-<img src="/data/balanced_26_types_max_entropy.png?raw=true" width="250"/>
 
 
