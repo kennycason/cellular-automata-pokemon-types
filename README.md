@@ -72,11 +72,12 @@ The convergence charts for select N Typed simulations.
 ### N Types GIFs
 
 GIFs are large so I tried to not load all of them on one page. Below are some links (they open in new tabs).
-<a href="/data/balanced_4_types.gif?raw=true" target="blank">4 Type CA</a>
-<a href="/data/balanced_8_types.gif?raw=true" target="blank">8 Type CA</a>
-<a href="/data/balanced_10_types.gif?raw=true" target="blank">10 Type CA</a>
-<a href="/data/balanced_12_types.gif?raw=true" target="blank">12 Type CA</a>
-<a href="/data/balanced_20_types.gif?raw=true" target="blank">20 Type CA (Partial)</a>
+
+<a href="/data/balanced_4_types.gif" target="blank">4 Type CA</a>, 
+<a href="/data/balanced_8_types.gif" target="blank">8 Type CA</a>, 
+<a href="/data/balanced_10_types.gife" target="blank">10 Type CA</a>, 
+<a href="/data/balanced_12_types.gif" target="blank">12 Type CA</a>, 
+<a href="/data/balanced_20_types.gif" target="blank">20 Type CA (Partial)</a>
 
 12 Typed CA
 
@@ -148,12 +149,12 @@ The epic comeback of Normal
 
 More GIFs in the below are some links (they open in new tabs).
 
-<a href="/data/pokemon_gen1_types.gif?raw=true" target="blank">Run 1</a>
+<a href="/data/pokemon_gen1_types.gif" target="blank">Run 1</a>
 
-<a href="/data/pokemon_gen1_types2a.gif?raw=true" target="blank">Run 2a</a>, 
-<a href="/data/pokemon_gen1_types2b.gif?raw=true" target="blank">Run 2b</a>
+<a href="/data/pokemon_gen1_types2a.gif" target="blank">Run 2a</a>, 
+<a href="/data/pokemon_gen1_types2b.gif" target="blank">Run 2b</a>
 
-<a href="/data/pokemon_gen1_types_no_immunity.gif?raw=true" target="blank">Run with no immunities</a>
+<a href="/data/pokemon_gen1_types_no_immunity.gif" target="blank">Run with no immunities</a>
 
 ### Sample Convergence Rates
 
