@@ -43,13 +43,13 @@ This demonstration is very similar to demonstration #1 except for more than 3 ty
 
 For low N, the types quickly converge to order and balance. With the exception being that 2 types, since they attack each other, tend to end with a single winner.
 
-Another interesting trend is the "bulge" pattern that appears in the center of the convergence graphs. The population distribution starts out balanced, and the end balanced. However, during these bulges, they are very off balance. The starting states are randomly initialized and could be described as "chaotic", and the end states are well "ordered" and portray very obvious patterns. This could be thought of as the "energy" required to bring order to the chaos of the system. 
+Another interesting trend is the "bulge" pattern that appears in the center of the convergence graphs. The population distribution starts out balanced and ends balanced. However, during these bulges, they are very off balance. The starting states are randomly initialized and could be described as "chaotic", and the end states are well "ordered" and portray obvious patterns. This could be thought of as the "energy" required to bring order to the chaos of the system. 
 
 It is possible for a type to "accidentally" go extinct, which brings the system out of balance. This imbalance can be seen more frequently when N = 2, or as N grows in size (~20+).
 
 The 26 Typed CA tend to never escape the random initialization.
 
-The convergence charts for select N Typed simulations.
+Below are the convergence charts for select N Typed simulations.
 
 
 <table>
