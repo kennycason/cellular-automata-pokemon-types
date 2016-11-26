@@ -12,7 +12,7 @@ Simulations include:
 
 This demonstration is a CA that simulates three balanced Pokemon types battling against each other. 
 
-Balanced meaning that Type A can beat B, and only B. Type B can beat C, and only B. So on and so forth. 
+Balanced meaning that Type A can beat B, and only B. Type B can beat C, and only C. So on and so forth. 
 
 ### Rules for 3 Type Simulation
 
