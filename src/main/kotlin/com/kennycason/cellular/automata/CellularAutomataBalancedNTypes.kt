@@ -36,7 +36,6 @@ class CellularAutomataBalancedNTypes() {
     var graphics = canvas.createGraphics()
 
     var fg = array2d(width, height, { Cell(hp = 10, type = SimpleType.A) })
-    var bg = array2d(width, height, { Cell(hp = 10, type = SimpleType.A) })
 
     val palette: MutableMap<SimpleType, Int> = mutableMapOf()
 
@@ -105,57 +104,21 @@ class CellularAutomataBalancedNTypes() {
         (0.. width - 1).forEach { x ->
             (0.. height - 1).forEach { y ->
                 // vertical/horizontal
-                if (x > 0) {
-                    battle(fg[x - 1][y], fg[x][y])
-                } else {
-                    battle(fg[width - 1][y], fg[x][y])
-                }
-
-                if (x < width - 1) {
-                     battle(fg[x + 1][y], fg[x][y])
-                } else {
-                    battle(fg[0][y], fg[x][y])
-                }
-
-                if (y > 0) {
-                    battle(fg[x][y - 1], fg[x][y])
-                } else {
-                    battle(fg[x][height - 1], fg[x][y])
-                }
-
-                if (y < height - 1) {
-                    battle(fg[x][y + 1], fg[x][y])
-                } else {
-                    battle(fg[x][0], fg[x][y])
-                }
+                battle(get(x - 1, y), fg[x][y])
+                battle(get(x + 1, y), fg[x][y])
+                battle(get(x, y - 1), fg[x][y])
+                battle(get(x, y + 1), fg[x][y])
 
                 // diagonals
-                if (x > 0 && y > 0) {
-                    battle(fg[x - 1][y - 1], fg[x][y])
-                } else {
-                    battle(fg[width - 1][height - 1], fg[x][y])
-                }
-
-                if (x < width - 1 && y > 0) {
-                    battle(fg[x + 1][y - 1], fg[x][y])
-                } else {
-                    battle(fg[0][height - 1], fg[x][y])
-                }
-
-                if (x > 0 && y < height - 1) {
-                    battle(fg[x - 1][y + 1], fg[x][y])
-                } else {
-                    battle(fg[width - 1][0], fg[x][y])
-                }
-
-                if (x < width - 1 && y < height - 1) {
-                    battle(fg[x + 1][y + 1], fg[x][y])
-                } else {
-                    battle(fg[0][0], fg[x][y])
-                }
+                battle(get(x - 1, y - 1), fg[x][y])
+                battle(get(x + 1, y - 1), fg[x][y])
+                battle(get(x - 1, y + 1), fg[x][y])
+                battle(get(x + 1, y + 1), fg[x][y])
             }
         }
     }
+
+    private fun get(x: Int, y: Int) = fg[(x + width) % width][(y + height) % height]
 
     private fun battle(defender: Cell, attacker: Cell) {
 //        if (attacker.type == SimpleType.NONE) { return }
@@ -226,9 +189,6 @@ class CellularAutomataBalancedNTypes() {
     }
 
     private fun generateType(): SimpleType {
-//        if (random.nextInt(100) > 1) {
-//            return SimpleType.NONE
-//        }
         return SimpleType.values()[random.nextInt(SimpleType.values().size)]
     }
 
@@ -240,14 +200,14 @@ class CellularAutomataBalancedNTypes() {
  //       NONE,
         A,
         B,
-//        C,
-//        D,
-//        E,
-//        F,
-//        G,
-//        H,
-//        I,
-//        J,
+        C,
+        D,
+        E,
+        F,
+        G,
+        H,
+        I,
+        J,
 //        K,
 //        L,
 //        M,

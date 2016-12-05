@@ -35,7 +35,6 @@ class CellularAutomataPokemonGen1Types() {
     var graphics = canvas.createGraphics()
 
     var fg = array2d(width, height, { Pokemon() })
-    var bg = array2d(width, height, { Pokemon() })
 
     val palette = mapOf(
             Pair(Type.NORMAL, Color(0xFFFFFF).rgb),
@@ -143,57 +142,21 @@ class CellularAutomataPokemonGen1Types() {
         (0.. width - 1).forEach { x ->
             (0.. height - 1).forEach { y ->
                 // vertical/horizontal
-                if (x > 0) {
-                    battle(fg[x - 1][y], fg[x][y])
-                } else {
-                    battle(fg[width - 1][y], fg[x][y])
-                }
-
-                if (x < width - 1) {
-                    battle(fg[x + 1][y], fg[x][y])
-                } else {
-                    battle(fg[0][y], fg[x][y])
-                }
-
-                if (y > 0) {
-                    battle(fg[x][y - 1], fg[x][y])
-                } else {
-                    battle(fg[x][height - 1], fg[x][y])
-                }
-
-                if (y < height - 1) {
-                    battle(fg[x][y + 1], fg[x][y])
-                } else {
-                    battle(fg[x][0], fg[x][y])
-                }
+                battle(get(x - 1, y), fg[x][y])
+                battle(get(x + 1, y), fg[x][y])
+                battle(get(x, y - 1), fg[x][y])
+                battle(get(x, y + 1), fg[x][y])
 
                 // diagonals
-                if (x > 0 && y > 0) {
-                    battle(fg[x - 1][y - 1], fg[x][y])
-                } else {
-                    battle(fg[width - 1][height - 1], fg[x][y])
-                }
-
-                if (x < width - 1 && y > 0) {
-                    battle(fg[x + 1][y - 1], fg[x][y])
-                } else {
-                    battle(fg[0][height - 1], fg[x][y])
-                }
-
-                if (x > 0 && y < height - 1) {
-                    battle(fg[x - 1][y + 1], fg[x][y])
-                } else {
-                    battle(fg[width - 1][0], fg[x][y])
-                }
-
-                if (x < width - 1 && y < height - 1) {
-                    battle(fg[x + 1][y + 1], fg[x][y])
-                } else {
-                    battle(fg[0][0], fg[x][y])
-                }
+                battle(get(x - 1, y - 1), fg[x][y])
+                battle(get(x + 1, y - 1), fg[x][y])
+                battle(get(x - 1, y + 1), fg[x][y])
+                battle(get(x + 1, y + 1), fg[x][y])
             }
         }
     }
+
+    private fun get(x: Int, y: Int) = fg[(x + width) % width][(y + height) % height]
 
     private fun battle(defender: Pokemon, attacker: Pokemon) {
         if (defender.type == Type.NONE && attacker.type == Type.NONE) { return }
