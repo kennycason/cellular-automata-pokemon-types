@@ -34,6 +34,11 @@ class CellularAutomataPokemonGen1Types {
     private var fgCanvas: BufferedImage = BufferedImage(screenWidth, screenHeight, BufferedImage.TYPE_INT_ARGB)
     private var fg = array2d(width, height) { Pokemon() }
     private val imageDifference = ImageDifference(1)
+    private val imageFolderBase = "/tmp/pokemon_${System.currentTimeMillis() / 1000}/"
+
+    init {
+        println("image folder: $imageFolderBase")
+    }
 
     private val palette = mapOf(
         Pair(Type.NORMAL, Color(0xFFFFFF).rgb),
@@ -127,7 +132,7 @@ class CellularAutomataPokemonGen1Types {
                 g.drawImage(fgCanvas, 0, 0, screenWidth, screenHeight, this)
 
                 if (saveImage && i % saveIthImage == 0) {
-                    ImageIO.write(fgCanvas, "png", File("/tmp/pokemon_${cellDim}x${cellDim}_${i}.png"))
+                    saveCanvasAsImage()
                 }
 
                 if (i % 2500 == 0) {
@@ -150,6 +155,16 @@ class CellularAutomataPokemonGen1Types {
 
                 i++
             }
+
+            private fun saveCanvasAsImage() {
+                val file = File(imageFolderBase)
+                if (!file.exists()) {
+                    file.mkdirs()  // Create the directory if it does not exist
+                }
+                val fileName = "$imageFolderBase$i.png"
+                ImageIO.write(fgCanvas, "png", File(fileName))
+                // println("saved image to $fileName")
+            }
         }
         frame.add(panel)
         panel.revalidate()
@@ -157,6 +172,7 @@ class CellularAutomataPokemonGen1Types {
         while (true) {
             panel.repaint()
         }
+
     }
 
     private fun step() {
