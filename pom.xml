@@ -9,7 +9,7 @@
     <version>1.0</version>
 
     <properties>
-        <kotlin.version>1.0.5</kotlin.version>
+        <kotlin.version>1.9.23</kotlin.version>
     </properties>
 
     <dependencies>
