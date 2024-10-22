@@ -131,8 +131,9 @@ class CellularAutomataPokemonGen1Types {
                 }
 
                 if (i % 2500 == 0) {
-                    println("randomize because 5000 generations")
+                    println("randomize because 2500 generations")
                     randomize()
+                    i = 0
                 }
                 val delta = imageDifference.compareNormalized(bgCanvas, fgCanvas)
                 if (delta < 0.01) {
