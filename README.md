@@ -170,6 +170,16 @@ More GIFs in the below are some links (they open in new tabs).
 </tr>
 </table>
 
+## Images to Video
+
+### Youtube Quality
+
+`ffmpeg -framerate 16 -pattern_type glob -i "*.png" -vf "scale=1280:720,fps=16" -c:v libx264 -b:v 5000k -crf 16 -pix_fmt yuv420p pokemon.mp4`
+
+### Basic Quality
+
+`ffmpeg -framerate 16 -pattern_type glob -i "*.png" -c:v libx264 -pix_fmt yuv420p pokemon.mp4`
+
 ### Conclusion
 
 - Ghost wins the vast majority of the fights. This is largely due to it's immunities and relatively low overlap with other types. Specifically, nothing has an advantage over Ghost, except other Ghost.

@@ -30,6 +30,8 @@ class CellularAutomataPokemonGen1Types {
     private val saveIthImage = 1
     private val printConvergenceStats = true
     private var friendlyFire = true // pokemon attack same typed pokemon
+    private var fireWaterGrassOnly = false
+    private var generationsPerCycle = 2000
     private var bgCanvas: BufferedImage = BufferedImage(screenWidth, screenHeight, BufferedImage.TYPE_INT_ARGB)
     private var fgCanvas: BufferedImage = BufferedImage(screenWidth, screenHeight, BufferedImage.TYPE_INT_ARGB)
     private var fg = array2d(width, height) { Pokemon() }
@@ -118,6 +120,7 @@ class CellularAutomataPokemonGen1Types {
         }
 
         var i = 0
+        var generationsSinceRandomize = 0
         val panel = object : JPanel() {
             override fun paintComponent(g: Graphics) {
                 super.paintComponent(g)
@@ -134,26 +137,26 @@ class CellularAutomataPokemonGen1Types {
                 if (saveImage && i % saveIthImage == 0) {
                     saveCanvasAsImage()
                 }
-
-                if (i % 2500 == 0) {
-                    println("randomize because 2500 generations")
+                if (generationsSinceRandomize > 0 && generationsSinceRandomize % generationsPerCycle == 0) {
+                    println("randomize because $generationsPerCycle generations")
                     randomize()
-                    i = 0
+                    generationsSinceRandomize = 0
                 }
                 val delta = imageDifference.compareNormalized(bgCanvas, fgCanvas)
                 if (delta < 0.01) {
                     println("randomize because too low change: $delta")
                     randomize()
-                    i = 0
+                    generationsSinceRandomize = 0
                 }
                 val entropy = Entropy.calculateNormalizedEntropy(fgCanvas)
                 if (entropy < 0.07) {
                     println("randomize because entropy is low: $entropy")
                     randomize()
-                    i = 0
+                    generationsSinceRandomize = 0
                 }
 
                 i++
+                generationsSinceRandomize++
             }
 
             private fun saveCanvasAsImage() {
@@ -161,7 +164,7 @@ class CellularAutomataPokemonGen1Types {
                 if (!file.exists()) {
                     file.mkdirs()  // Create the directory if it does not exist
                 }
-                val fileName = "$imageFolderBase$i.png"
+                val fileName = "$imageFolderBase${i.padWithZeros(5)}.png"
                 ImageIO.write(fgCanvas, "png", File(fileName))
                 // println("saved image to $fileName")
             }
@@ -283,9 +286,14 @@ class CellularAutomataPokemonGen1Types {
             }
         }
         friendlyFire = random.nextBoolean()
+//        fireWaterGrassOnly = random.nextBoolean()
+//        generationsPerCycle = if (fireWaterGrassOnly) 500 else 2500
     }
 
     private fun generateType(): Type {
+//        if (fireWaterGrassOnly) {
+//            return listOf(Type.FIRE, Type.WATER, Type.GRASS).random()
+//        }
         return Type.entries[random.nextInt(Type.entries.size)]
     }
 
